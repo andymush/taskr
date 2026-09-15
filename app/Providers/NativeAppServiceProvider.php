@@ -14,13 +14,13 @@ class NativeAppServiceProvider implements ProvidesPhpIni
     public function boot(): void
     {
         Window::open()
-            ->title('Taskr')
-            ->width(900)
-            ->height(650)
-            ->minWidth(600)
-            ->minHeight(400)
-            ->rememberState()   // persists size/position between launches
-            ->route('tasks'); 
+            ->route('tasks')
+            ->width(500)
+            ->height(700)
+            ->resizable(false)
+            ->titleBarHidden()      // removes OS title bar
+            ->trafficLightsHidden() // macOS: hides the red/yellow/green dots
+            ->alwaysOnTop();        // keeps it above other windows 
     }
 
     /**
